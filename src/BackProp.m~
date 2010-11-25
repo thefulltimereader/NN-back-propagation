@@ -1,0 +1,4 @@
+%computes delta for each weight to update by back propagating erros
+function[dw] = BackProp(M, P, dw)
+
+fprintf('forward prop..\n');

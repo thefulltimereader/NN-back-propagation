@@ -1,0 +1,16 @@
+%sets up weight matricies
+function[Params] =  initNodes(Model, Params)
+
+fprintf('init weights\n');
+layers = Model.arch;
+%set up weights with normally dist random numbers between -1 and 1
+% (if bias add an extra row for it in the bottom)
+for i = 1: Model.nLayers-1
+ Params.w{i} = [1-2*randn(layers(i), layers(i+1))];
+
+ if(Model.bias) 
+   Params.b{i} = [1-2*randn(1, layers(i+1))];
+ else
+
+ end
+end
